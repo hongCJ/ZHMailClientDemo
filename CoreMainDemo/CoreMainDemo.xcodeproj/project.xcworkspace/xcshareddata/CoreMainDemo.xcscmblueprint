@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "9F86CB98F6F0ED391B7147B888BF8D4131845765",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "9F86CB98F6F0ED391B7147B888BF8D4131845765" : 9223372036854775807,
+    "7ACF23A507BCFA5964C32B48177971421D05CCCE" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "55925EEA-8D22-4BFA-8CD3-B68DCC2B87F6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "9F86CB98F6F0ED391B7147B888BF8D4131845765" : "ZHMailClientDemo\/",
+    "7ACF23A507BCFA5964C32B48177971421D05CCCE" : "..\/mailcore2"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CoreMainDemo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CoreMainDemo\/CoreMainDemo.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/MailCore\/mailcore2.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7ACF23A507BCFA5964C32B48177971421D05CCCE"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/hongCJ\/ZHMailClientDemo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9F86CB98F6F0ED391B7147B888BF8D4131845765"
+    }
+  ]
+}

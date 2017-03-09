@@ -8,10 +8,7 @@
 
 #import "AppDelegate.h"
 #import "CHMailFolderListViewController.h"
-#import "testViewController.h"
 
-#import "CustomHTTPProtocol.h"
-#import "SignalHelper.h"
 
 @interface AppDelegate ()
 

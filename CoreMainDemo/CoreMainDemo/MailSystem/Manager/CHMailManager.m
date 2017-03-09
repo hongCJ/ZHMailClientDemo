@@ -13,6 +13,8 @@
 #import "CHMailAccountModel.h"
 
 #import "CHMailCacheManager.h"
+
+
 @interface CHMailManager ()<CHMailSessionDelegate>
 {
     CHMailAccountManager * accountManager;

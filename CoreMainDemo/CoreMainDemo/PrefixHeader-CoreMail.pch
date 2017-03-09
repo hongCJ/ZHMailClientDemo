@@ -9,6 +9,7 @@
 #ifndef PrefixHeader_CoreMail_pch
 #define PrefixHeader_CoreMail_pch
 
+#import <MailCore/MailCore.h>
 #import "CHMailAccountModel.h"
 #import "CHMailLetterModel.h"
 #import "CHMailFolderModel.h"
