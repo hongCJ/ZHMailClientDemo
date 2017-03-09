@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="R7V-E8-eFb">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="mb9-WK-jL5">
+            <objects>
+                <viewController id="Aym-5H-7L8" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="q6t-aY-hqw"/>
+                        <viewControllerLayoutGuide type="bottom" id="jAl-EK-3k2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="k49-1x-wOR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBk-1F-M3q">
+                                <rect key="frame" x="32" y="118" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Email"/>
+                                <connections>
+                                    <segue destination="cep-Q8-spy" kind="show" id="XFL-qr-0oB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DVm-IY-QNb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2bH-VC-Oa0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="732" y="182.15892053973016"/>
+        </scene>
+        <!--Mail Folder List View Controller-->
+        <scene sceneID="i2f-Q6-Drf">
+            <objects>
+                <viewController id="cep-Q8-spy" customClass="CHMailFolderListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c0y-bX-oxT"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qif-BA-vpF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FSh-hL-EjP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bQL-Uo-5PA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1532" y="182"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="v3U-Oe-CFz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="R7V-E8-eFb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BBC-0s-jYE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Aym-5H-7L8" kind="relationship" relationship="rootViewController" id="hTw-c9-qll"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tGS-8H-22K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-207.19999999999999" y="182.15892053973016"/>
+        </scene>
+    </scenes>
+</document>
