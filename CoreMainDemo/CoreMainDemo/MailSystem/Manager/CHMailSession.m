@@ -12,7 +12,6 @@
 
 #import "CHMailCacheManager.h"
 
-#import "NSString+Server.h"
 
 
 @interface CHMailSession ()<MCOHTMLRendererDelegate>

@@ -6,14 +6,10 @@
 //  Copyright © 2017 zhenghong. All rights reserved.
 //
 
-#import "NSString+Server.h"
+#import "NSString+path.h"
 
-@implementation NSString (Server)
+@implementation NSString (path)
 
-- (NSString*)serverFromEmail {
-   
-    return @"";
-}
 
 + (NSString*)mailServerPath {
     NSString * path = [[NSBundle mainBundle] pathForResource:@"CHMailServer" ofType:@"plist"];

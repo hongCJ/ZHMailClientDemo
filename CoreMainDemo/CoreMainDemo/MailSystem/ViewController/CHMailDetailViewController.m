@@ -9,7 +9,6 @@
 #import "CHMailDetailViewController.h"
 #import "CHMailManager.h"
 #import "CHMailFolderModel.h"
-#import "NSString+Server.h"
 
 static NSString * mainJavascript = @"\
 var imageElements = function() {\

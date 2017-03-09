@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSString (Server)
+@interface NSString (path)
 
-- (NSString*)serverFromEmail;
+
 
 + (NSString*)mailServerPath;
 

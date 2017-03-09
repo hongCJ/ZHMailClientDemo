@@ -11,7 +11,7 @@
 		EC26F1701E5BCC6A00AB61D2 /* CHMailFolderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC26F16F1E5BCC6A00AB61D2 /* CHMailFolderListViewController.m */; };
 		EC26F17B1E5BCFB600AB61D2 /* CHMailManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EC26F17A1E5BCFB600AB61D2 /* CHMailManager.m */; };
 		EC26F17E1E5BD18200AB61D2 /* CHMailAccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EC26F17D1E5BD18200AB61D2 /* CHMailAccountManager.m */; };
-		EC26F1831E5BE27A00AB61D2 /* NSString+Server.m in Sources */ = {isa = PBXBuildFile; fileRef = EC26F1821E5BE27A00AB61D2 /* NSString+Server.m */; };
+		EC26F1831E5BE27A00AB61D2 /* NSString+path.m in Sources */ = {isa = PBXBuildFile; fileRef = EC26F1821E5BE27A00AB61D2 /* NSString+path.m */; };
 		EC26F18D1E5BEEE100AB61D2 /* CHMailAddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC26F18C1E5BEEE100AB61D2 /* CHMailAddAccountViewController.m */; };
 		EC26F1931E5C152800AB61D2 /* CHMailSession.m in Sources */ = {isa = PBXBuildFile; fileRef = EC26F1921E5C152800AB61D2 /* CHMailSession.m */; };
 		EC26F19B1E5C3D4400AB61D2 /* CHSendMailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC26F19A1E5C3D4400AB61D2 /* CHSendMailViewController.xib */; };
@@ -26,6 +26,11 @@
 		EC833FE21E5EDF1A00DD9E0C /* CHMailServerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC833FE11E5EDF1A00DD9E0C /* CHMailServerTableViewController.m */; };
 		EC833FE71E5EE66C00DD9E0C /* CHMailAddAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC833FE61E5EE66C00DD9E0C /* CHMailAddAccountViewController.xib */; };
 		EC9794781E714F7100702DFD /* libMailCore-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9794671E714DAB00702DFD /* libMailCore-ios.a */; };
+		EC9794851E7152D800702DFD /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC97947C1E7152D800702DFD /* SVIndefiniteAnimatedView.m */; };
+		EC9794861E7152D800702DFD /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC97947E1E7152D800702DFD /* SVProgressAnimatedView.m */; };
+		EC9794871E7152D800702DFD /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EC9794801E7152D800702DFD /* SVProgressHUD.bundle */; };
+		EC9794881E7152D800702DFD /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9794821E7152D800702DFD /* SVProgressHUD.m */; };
+		EC9794891E7152D800702DFD /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9794841E7152D800702DFD /* SVRadialGradientLayer.m */; };
 		EC995ACF1E6FCA0200B82909 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC995ACE1E6FCA0200B82909 /* Main.storyboard */; };
 		ECDBAE0E1E67C49500D5EE1B /* CHMailCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ECDBAE0D1E67C49500D5EE1B /* CHMailCacheManager.m */; };
 		ECE30C821E60290700F97038 /* CHMailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE30C811E60290700F97038 /* CHMailModel.m */; };
@@ -137,8 +142,8 @@
 		EC26F17A1E5BCFB600AB61D2 /* CHMailManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMailManager.m; sourceTree = "<group>"; };
 		EC26F17C1E5BD18200AB61D2 /* CHMailAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMailAccountManager.h; sourceTree = "<group>"; };
 		EC26F17D1E5BD18200AB61D2 /* CHMailAccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMailAccountManager.m; sourceTree = "<group>"; };
-		EC26F1811E5BE27A00AB61D2 /* NSString+Server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Server.h"; sourceTree = "<group>"; };
-		EC26F1821E5BE27A00AB61D2 /* NSString+Server.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Server.m"; sourceTree = "<group>"; };
+		EC26F1811E5BE27A00AB61D2 /* NSString+path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+path.h"; sourceTree = "<group>"; };
+		EC26F1821E5BE27A00AB61D2 /* NSString+path.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+path.m"; sourceTree = "<group>"; };
 		EC26F18B1E5BEEE100AB61D2 /* CHMailAddAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMailAddAccountViewController.h; sourceTree = "<group>"; };
 		EC26F18C1E5BEEE100AB61D2 /* CHMailAddAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMailAddAccountViewController.m; sourceTree = "<group>"; };
 		EC26F1911E5C152800AB61D2 /* CHMailSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMailSession.h; sourceTree = "<group>"; };
@@ -163,6 +168,16 @@
 		EC833FE11E5EDF1A00DD9E0C /* CHMailServerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMailServerTableViewController.m; sourceTree = "<group>"; };
 		EC833FE61E5EE66C00DD9E0C /* CHMailAddAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHMailAddAccountViewController.xib; sourceTree = "<group>"; };
 		EC9794591E714DAB00702DFD /* mailcore2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = mailcore2.xcodeproj; path = "../../../mailcore2/build-mac/mailcore2.xcodeproj"; sourceTree = "<group>"; };
+		EC97947B1E7152D800702DFD /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		EC97947C1E7152D800702DFD /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		EC97947D1E7152D800702DFD /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		EC97947E1E7152D800702DFD /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		EC97947F1E7152D800702DFD /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		EC9794801E7152D800702DFD /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		EC9794811E7152D800702DFD /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		EC9794821E7152D800702DFD /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		EC9794831E7152D800702DFD /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		EC9794841E7152D800702DFD /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
 		EC995ACE1E6FCA0200B82909 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		ECDBAE0C1E67C49500D5EE1B /* CHMailCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMailCacheManager.h; sourceTree = "<group>"; };
 		ECDBAE0D1E67C49500D5EE1B /* CHMailCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMailCacheManager.m; sourceTree = "<group>"; };
@@ -234,8 +249,8 @@
 		EC26F17F1E5BD30700AB61D2 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				EC26F1811E5BE27A00AB61D2 /* NSString+Server.h */,
-				EC26F1821E5BE27A00AB61D2 /* NSString+Server.m */,
+				EC26F1811E5BE27A00AB61D2 /* NSString+path.h */,
+				EC26F1821E5BE27A00AB61D2 /* NSString+path.m */,
 				EC1794551E6E8A9F0095DB68 /* func.js */,
 			);
 			path = Util;
@@ -319,6 +334,31 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		EC9794791E7152CB00702DFD /* Extend */ = {
+			isa = PBXGroup;
+			children = (
+				EC97947A1E7152D800702DFD /* SVProgressHUD */,
+			);
+			path = Extend;
+			sourceTree = "<group>";
+		};
+		EC97947A1E7152D800702DFD /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				EC97947B1E7152D800702DFD /* SVIndefiniteAnimatedView.h */,
+				EC97947C1E7152D800702DFD /* SVIndefiniteAnimatedView.m */,
+				EC97947D1E7152D800702DFD /* SVProgressAnimatedView.h */,
+				EC97947E1E7152D800702DFD /* SVProgressAnimatedView.m */,
+				EC97947F1E7152D800702DFD /* SVProgressHUD-Prefix.pch */,
+				EC9794801E7152D800702DFD /* SVProgressHUD.bundle */,
+				EC9794811E7152D800702DFD /* SVProgressHUD.h */,
+				EC9794821E7152D800702DFD /* SVProgressHUD.m */,
+				EC9794831E7152D800702DFD /* SVRadialGradientLayer.h */,
+				EC9794841E7152D800702DFD /* SVRadialGradientLayer.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		ECDBAE041E67C46C00D5EE1B /* Cache */ = {
 			isa = PBXGroup;
 			children = (
@@ -353,6 +393,7 @@
 		ECF3C2311E59B39400E34302 /* CoreMainDemo */ = {
 			isa = PBXGroup;
 			children = (
+				EC9794791E7152CB00702DFD /* Extend */,
 				EC76EC231E5AF3A8001F183E /* MailSystem */,
 				ECF3C2351E59B39400E34302 /* AppDelegate.h */,
 				ECF3C2361E59B39400E34302 /* AppDelegate.m */,
@@ -579,6 +620,7 @@
 				EC833FDF1E5ED9F100DD9E0C /* CHMailServer.plist in Resources */,
 				ECF3C2421E59B39400E34302 /* LaunchScreen.storyboard in Resources */,
 				ECF69F821E5D974300E610FC /* CHMailDetailViewController.xib in Resources */,
+				EC9794871E7152D800702DFD /* SVProgressHUD.bundle in Resources */,
 				EC76EC371E5AF50F001F183E /* CHMailListTableViewCell.xib in Resources */,
 				EC26F19B1E5C3D4400AB61D2 /* CHSendMailViewController.xib in Resources */,
 				ECF3C23F1E59B39400E34302 /* Assets.xcassets in Resources */,
@@ -615,14 +657,18 @@
 				EC833FDD1E5ED0AD00DD9E0C /* CHMailServerModel.m in Sources */,
 				EC833FE21E5EDF1A00DD9E0C /* CHMailServerTableViewController.m in Sources */,
 				ECF69F811E5D974300E610FC /* CHMailDetailViewController.m in Sources */,
+				EC9794891E7152D800702DFD /* SVRadialGradientLayer.m in Sources */,
 				EC26F1701E5BCC6A00AB61D2 /* CHMailFolderListViewController.m in Sources */,
+				EC9794881E7152D800702DFD /* SVProgressHUD.m in Sources */,
 				EC76EC2C1E5AF4A4001F183E /* CHMailAccountModel.m in Sources */,
 				ECF3C2371E59B39400E34302 /* AppDelegate.m in Sources */,
 				EC76EC291E5AF3F4001F183E /* CHSendMailViewController.m in Sources */,
-				EC26F1831E5BE27A00AB61D2 /* NSString+Server.m in Sources */,
+				EC26F1831E5BE27A00AB61D2 /* NSString+path.m in Sources */,
 				ECF69F761E5D76B900E610FC /* CHMailFolderModel.m in Sources */,
 				ECE30C821E60290700F97038 /* CHMailModel.m in Sources */,
+				EC9794851E7152D800702DFD /* SVIndefiniteAnimatedView.m in Sources */,
 				ECF3C2341E59B39400E34302 /* main.m in Sources */,
+				EC9794861E7152D800702DFD /* SVProgressAnimatedView.m in Sources */,
 				ECDBAE0E1E67C49500D5EE1B /* CHMailCacheManager.m in Sources */,
 				EC76EC361E5AF50F001F183E /* CHMailListTableViewCell.m in Sources */,
 				EC26F1931E5C152800AB61D2 /* CHMailSession.m in Sources */,

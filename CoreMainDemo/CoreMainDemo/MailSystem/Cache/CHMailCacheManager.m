@@ -7,7 +7,6 @@
 //
 
 #import "CHMailCacheManager.h"
-#import "NSString+Server.h"
 #import "CHMailModel.h"
 
 @interface CHMailCacheManager ()

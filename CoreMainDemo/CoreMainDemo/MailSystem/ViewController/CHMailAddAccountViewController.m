@@ -8,7 +8,6 @@
 
 #import "CHMailAddAccountViewController.h"
 #import "CHMailManager.h"
-#import "NSString+Server.h"
 @interface CHMailAddAccountViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *displayNameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
@@ -48,9 +47,10 @@
     }
 
     [[CHMailManager sharedManager] addMailAccount:self.server email:email password:password displayName:self.displayNameTextField.text description:self.descriptionTextField.text];
+    [SVProgressHUD showWithStatus:@"正在添加"];
     [[CHMailManager sharedManager] setCHMailAddAccountBlock:^(NSString * err) {
         if (err) {
-            
+            [SVProgressHUD showErrorWithStatus:err];
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
                [self.navigationController popToRootViewControllerAnimated:YES];

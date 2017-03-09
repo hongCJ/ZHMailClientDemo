@@ -10,9 +10,15 @@
 #define PrefixHeader_CoreMail_pch
 
 #import <MailCore/MailCore.h>
+
+
 #import "CHMailAccountModel.h"
 #import "CHMailLetterModel.h"
 #import "CHMailFolderModel.h"
+#import "NSString+path.h"
+
+
+#import "SVProgressHUD.h"
 
 
 // Include any system framework and library headers here that should be included in all compilation units.

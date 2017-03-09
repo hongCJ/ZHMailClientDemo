@@ -9,7 +9,6 @@
 #import "CHMailFolderListViewController.h"
 #import "CHMailListTableViewCell.h"
 #import "CHMailManager.h"
-#import "NSString+Server.h"
 #import "CHMailSession.h"
 #import "CHMailAccountManager.h"
 #import "CHSendMailViewController.h"
@@ -29,7 +28,8 @@
     
 }
 
-@property (strong, nonatomic) UITableView *MailTableView;
+@property (strong, nonatomic) IBOutlet UITableView *MailTableView;
+
 
 @end
 
@@ -38,41 +38,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     accountArray = [[NSMutableArray alloc] init];
-    
-    
-    self.MailTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 375, 667) style:UITableViewStylePlain];
-    self.MailTableView.delegate = self;
-    self.MailTableView.dataSource = self;
-    [self.view addSubview:self.MailTableView];
     [self.MailTableView registerNib:[UINib nibWithNibName:@"CHMailListTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"mailLisrCell"];
+    
     [CHMailManager sharedManager].folderDelegate = self;
     [[CHMailManager sharedManager] fetchAllFolder];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"发送" style:UIBarButtonItemStylePlain target:self action:@selector(sendMail)];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addAccount)];
     
-}
-
-- (void)addAccount {
-    [self.navigationController popViewControllerAnimated:YES];
-//    
-//    CHMailServerTableViewController * acountVC = [[CHMailServerTableViewController alloc] init];
-//    [self.navigationController pushViewController:acountVC animated:YES];
-}
-
-- (void)sendMail {
-    if (accountArray.count == 0) {
-        return;
-    }
-    CHSendMailViewController * sendVC = [[CHSendMailViewController alloc] init];
-    CHMailModel * model = accountArray[0];
-    sendVC.account = model.mailAccount;
-    [self.navigationController pushViewController:sendVC animated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
- 
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -85,6 +62,22 @@
     }
     
 }
+
+- (IBAction)newAccount:(id)sender {
+    CHMailServerTableViewController * acountVC = [[CHMailServerTableViewController alloc] init];
+    [self.navigationController pushViewController:acountVC animated:YES];
+}
+
+- (void)sendMail {
+    if (accountArray.count == 0) {
+        return;
+    }
+    CHSendMailViewController * sendVC = [[CHSendMailViewController alloc] init];
+    CHMailModel * model = accountArray[0];
+    sendVC.account = model.mailAccount;
+    [self.navigationController pushViewController:sendVC animated:YES];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

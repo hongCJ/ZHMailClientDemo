@@ -9,7 +9,6 @@
 #import "CHMailAccountManager.h"
 #import "CHMailAccountModel.h"
 #import "CHMailServerModel.h"
-#import "NSString+Server.h"
 
 @interface CHMailAccountManager ()
 {

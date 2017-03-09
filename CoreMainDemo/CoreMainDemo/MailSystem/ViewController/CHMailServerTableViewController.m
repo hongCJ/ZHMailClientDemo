@@ -7,7 +7,6 @@
 //
 
 #import "CHMailServerTableViewController.h"
-#import "NSString+Server.h"
 #import "CHMailServerModel.h"
 
 #import "CHMailAddAccountViewController.h"
