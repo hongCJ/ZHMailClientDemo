@@ -38,7 +38,7 @@
     if (email.length == 0) {
         return;
     }
-    if ([email CH_Email] == NO) {
+    if ([email ch_Email] == NO) {
         return;
     }
     NSString * password = self.passwordTextField.text;
@@ -53,6 +53,7 @@
             [SVProgressHUD showErrorWithStatus:err];
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
+                [SVProgressHUD dismiss];
                [self.navigationController popToRootViewControllerAnimated:YES];
             });
         }

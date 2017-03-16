@@ -9,8 +9,9 @@
 #import "CHMailListTableViewController.h"
 #import "CHMailManager.h"
 #import "CHMailDetailViewController.h"
+#import "CHMailListTableViewCell.h"
 
-@interface CHMailListTableViewController ()<CHMailManagerListProtocol>
+@interface CHMailListTableViewController ()<CHMailManagerListProtocol,CHMailListCellProtocol>
 {
     
 }
@@ -21,7 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"mailListCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"CHMailListTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"mailListCell"];
+//    self.tableView.gest
+    self.tableView.rowHeight = 100;
     [CHMailManager sharedManager].listDelegate = self;
     [[CHMailManager sharedManager] fetchMailInFolder:self.model];
 }
@@ -31,10 +34,43 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark MailManagerDeleagte
+
 - (void)fetchMailIn:(CHMailFolderModel *)folder {
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
     });
+}
+
+
+
+
+#pragma mark MailCellDelegate
+
+- (void)Action:(CHMailAction)action ForMailAt:(NSIndexPath *)indexPath {
+    switch (action) {
+        case MailActionRead:
+            NSLog(@"read");
+            break;
+        case MailActionUnRead:
+            NSLog(@"unread");
+            break;
+        case MailActionMore:
+            NSLog(@"more");
+            break;
+        case MailActionStar:
+            NSLog(@"star");
+            break;
+        case MailActionDelete:
+            NSLog(@"delete");
+            break;
+    }
+}
+
+- (BOOL)MailUnReadAt:(NSIndexPath *)indexPath {
+    CHMailLetterModel * letter = self.model.mails[indexPath.row];
+    
+    return YES;
 }
 
 #pragma mark - Table view data source
@@ -49,9 +85,14 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mailListCell" forIndexPath:indexPath];
+    CHMailListTableViewCell *cell = (CHMailListTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"mailListCell" forIndexPath:indexPath];
     CHMailLetterModel * letter = self.model.mails[indexPath.row];
-    cell.textLabel.text = letter.subject;
+    cell.mailFromLabel.text = letter.from.displayName;
+    cell.mailSubjectLabel.text = letter.subject;
+    cell.mailBodyLabel.text = letter.textBody;
+    cell.mailDateLabel.text = letter.receivedDateDes;
+    cell.mailListDelegate = self;
+    cell.cellIndexPath = indexPath;
     
     return cell;
 }

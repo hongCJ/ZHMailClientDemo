@@ -52,7 +52,7 @@
         [cc addObject:address];
     }
     model.cc = [cc copy];
-    model.body = self.contentTextView.text;
+    model.htmlBody = self.contentTextView.text;
     
     
     [[CHMailManager sharedManager] sendMail:model byAccount:self.account];

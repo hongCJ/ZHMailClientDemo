@@ -25,14 +25,9 @@
 
 - (void)Session:(CHMailSession *)session fetchMailContent:(CHMailLetterModel *)mail error:(NSError *)error;
 
-- (void)Session:(CHMailSession *)session fetchNextPage:(NSInteger)page error:(NSError*)error;
-
-- (void)Session:(CHMailSession *)session fetchNewMail:(NSArray *)mail inFolder:(CHMailFolderModel*)foler;
-
 - (void)Session:(CHMailSession *)session sendMailComplete:(NSError*)error;
 
 - (void)Session:(CHMailSession *)session saveMail:(CHMailLetterModel *)mail toFolder:(NSString*)folder complete:(NSError*)error;
-
 
 @required
 
@@ -46,6 +41,7 @@
 
 @property (nonatomic,assign) BOOL hasAccountLogin;
 @property (nonatomic,assign) BOOL hasAccountChecked;
+
 @property (nonatomic,strong) CHMailAccountModel * mailAccount;
 
 
@@ -55,15 +51,13 @@
 
 - (void)sendMail:(CHMailLetterModel*)mail;
 
-- (void)fetchFolderStatus:(NSString*)folder;
+- (void)fetchFolderStatus;
 
 - (void)fetchAllFolder;
 
 - (void)fetchMailInFolder:(NSString*)folder;
 
 - (void)fetchMailByUid:(uint32_t)uid folder:(NSString*)folder;
-
-- (void)refreshFolder:(NSString*)folder;
 
 - (void)saveMail:(CHMailLetterModel*)mail toFolder:(NSString*)folder;
 
@@ -74,8 +68,6 @@
 + (BOOL) isCID:(NSURL *)url;
 
 + (BOOL) isXMailcoreImage:(NSURL *)url;
-
-
 
 
 @end

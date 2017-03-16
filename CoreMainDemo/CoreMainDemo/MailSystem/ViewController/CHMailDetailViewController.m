@@ -48,7 +48,7 @@ var replaceImageSrc = function(info) {\
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    if (self.letter.body.length == 0) {
+    if (self.letter.htmlBody.length == 0) {
         [[CHMailManager sharedManager] fetchMailContent:self.letter infolder:self.folder];
         [CHMailManager sharedManager].contentDelegate = self;
     } else {
@@ -95,7 +95,7 @@ var replaceImageSrc = function(info) {\
         NSMutableString * html = [NSMutableString string];
         [html appendFormat:@"<html><head><script>%@</script></head>"
          @"<body>%@</body><iframe src='x-mailcore-msgviewloaded:' style='width: 0px; height: 0px; border: none;'>"
-         @"</iframe></html>", mainJavascript, self.letter.body];
+         @"</iframe></html>", mainJavascript, self.letter.htmlBody];
         [self.mailWebView loadHTMLString:html baseURL:nil];
         
     });

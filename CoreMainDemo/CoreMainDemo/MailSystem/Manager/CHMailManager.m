@@ -43,9 +43,7 @@
         accountManager = [[CHMailAccountManager alloc] init];
         sessionArray = [[NSMutableArray alloc] init];
         managerQueue = dispatch_queue_create("MailManagerQueue", DISPATCH_QUEUE_CONCURRENT);
-        dispatch_async(managerQueue, ^{
-           [self loadSession];
-        });
+        [self loadSession];
     }
     return self;
 }
@@ -55,7 +53,7 @@
     for (CHMailAccountModel * account in array) {
         CHMailSession * session = [[CHMailSession alloc] initWithAccount:account];
         session.sessionDelegate = self;
-        [session loginAccount];
+//        [session loginAccount];
         [sessionArray addObject:session];
     }
 }
@@ -138,9 +136,6 @@
     }
 }
 
-- (void)Session:(CHMailSession *)session fetchNextPage:(NSInteger)page error:(NSError *)error {
-    
-}
 
 - (void)Session:(CHMailSession *)session fecthFolderList:(NSArray *)folder error:(NSError *)error {
     if (self.folderDelegate) {
@@ -150,9 +145,6 @@
     }
 }
 
-- (void)Session:(CHMailSession *)session fetchNewMail:(NSArray *)mail inFolder:(CHMailFolderModel *)foler {
-    
-}
 
 - (void)Session:(CHMailSession *)session fetchMailContent:(CHMailLetterModel *)mail error:(NSError *)error {
     if (self.contentDelegate) {

@@ -22,7 +22,7 @@
     return doc;
 }
 
-- (BOOL)CH_Email {
+- (BOOL)ch_Email {
     NSString *email = @"^(\\w)+(\\.\\w+)*@(\\w)+(\\.com)$";//((\\.\\w+)+)
     return [self matchUsingRegex:email];
 }

@@ -25,7 +25,9 @@
 @property (nonatomic,copy) NSArray<MCOAddress*> *bcc;
 @property (nonatomic,copy) NSArray<MCOAddress*> *replyTo;
 @property (nonatomic,copy) NSString *subject;
-@property (nonatomic,copy) NSString *body;
+@property (nonatomic,copy) NSString *htmlBody;
+
+@property (nonatomic,copy) NSString *textBody;
 
 /*
  for send
@@ -44,6 +46,12 @@
 
 @property (nonatomic,strong) NSDate *sendDate;
 @property (nonatomic,strong) NSDate *recievedDate;
+
+@property (nonatomic,copy) NSString *sendDateDes;
+@property (nonatomic,copy) NSString *receivedDateDes;
+
+
+
 @property (nonatomic,assign) uint32_t uid;
 @property (nonatomic,copy) NSString *folder;
 

@@ -7,16 +7,11 @@
 //
 
 #import "CHMailFolderListViewController.h"
-#import "CHMailListTableViewCell.h"
 #import "CHMailManager.h"
-#import "CHMailSession.h"
-#import "CHMailAccountManager.h"
 #import "CHSendMailViewController.h"
 #import "CHMailFolderModel.h"
-
-#import "CHMailDetailViewController.h"
-#import "CHMailModel.h"
 #import "CHMailServerTableViewController.h"
+#import "CHMailModel.h"
 
 #import "CHMailListTableViewController.h"
 
@@ -38,7 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     accountArray = [[NSMutableArray alloc] init];
-    [self.MailTableView registerNib:[UINib nibWithNibName:@"CHMailListTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"mailLisrCell"];
+    [self.MailTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"mailFolderCell"];
     
     [CHMailManager sharedManager].folderDelegate = self;
     [[CHMailManager sharedManager] fetchAllFolder];
@@ -110,12 +105,15 @@
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CHMailListTableViewCell * mailCell = (CHMailListTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"mailLisrCell" forIndexPath:indexPath];
+    UITableViewCell * folderCell = [tableView dequeueReusableCellWithIdentifier:@"mailFolderCell" forIndexPath:indexPath];
+    folderCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     CHMailModel * model = accountArray[indexPath.section];
     CHMailFolderModel * folder = model.mailFolder[indexPath.row];
-    mailCell.textLabel.text = folder.displayName;
     
-    return mailCell;
+    folderCell.textLabel.text = folder.displayName;
+    folderCell.imageView.image = [UIImage imageNamed:@"mail_love"];
+    
+    return folderCell;
 }
 
 

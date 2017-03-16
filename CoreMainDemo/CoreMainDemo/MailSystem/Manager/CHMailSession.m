@@ -72,7 +72,6 @@
     return model;
 }
 
-
 - (void)loginAccount {
     MCOSMTPOperation * login = [smtpSession loginOperation];
     [login start:^(NSError * _Nullable error) {
@@ -126,7 +125,7 @@
     builder.header.cc = model.cc;
     builder.header.bcc = model.bcc;
     builder.header.subject = model.subject;
-    builder.textBody = model.body;
+    builder.textBody = model.htmlBody;
     builder.header.replyTo = model.replyTo;
     
     for (MCOAttachment* attachment in model.sendInlineFile) {
@@ -142,6 +141,11 @@
     return rfc822Data;
 }
 
+- (void)fetchFolderStatus {
+    for (CHMailFolderModel * folder in folderArray) {
+        [self fetchFolderStatus:folder.path];
+    }
+}
 
 - (void)fetchFolderStatus:(NSString *)folder {
     MCOIMAPFolderStatusOperation * statusOp = [imapSession folderStatusOperation:folder];
@@ -162,7 +166,7 @@
 }
 
 - (void)fetchAllFolder {
-
+    
     folderArray = [CHMailCacheManager getAllFolderIn:self.mailAccount];
     if (folderArray.count != 0) {
         [self fetchFolderFinish:nil];
@@ -185,9 +189,7 @@
         
         [self fetchFolderFinish:error];
         
-        for (CHMailFolderModel * folder in folderArray) {
-            [self fetchFolderStatus:folder.path];
-        }
+        [self fetchFolderStatus];
         
     }];
 }
@@ -224,6 +226,8 @@
             mail.folder = folder;
             model.uidNext = me.uid + 1;
             [mailArray addObject:mail ];
+            
+            [self fetchMailByUid:mail.uid folder:folder];
         }
         NSArray * reverseArray = [[mailArray.copy reverseObjectEnumerator] allObjects];
         [model addMails:reverseArray];
@@ -235,8 +239,6 @@
         }
     }];
 }
-
-
 
 
 - (void)fetchMailByUid:(uint32_t)uid folder:(NSString *)folder {
@@ -251,8 +253,10 @@
         
         // 解析邮件内容
         MCOMessageParser * msgPareser = [MCOMessageParser messageParserWithData:data];
-        NSString *content = [msgPareser htmlRenderingWithDelegate:self];
-        letter.body = content;
+        NSString *htmlContent = [msgPareser htmlRenderingWithDelegate:self];
+        NSString *textContent = [msgPareser plainTextBodyRenderingAndStripWhitespace:NO];
+        letter.textBody = textContent;
+        letter.htmlBody = htmlContent;
         
         NSArray * attact = [msgPareser attachments];
         NSArray * inlineAta = [msgPareser htmlInlineAttachments];
@@ -269,7 +273,7 @@
         });
         
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            NSArray * imgSrcArray = [content filterImageSrc];
+            NSArray * imgSrcArray = [htmlContent filterImageSrc];
             if (imgSrcArray.count == 0) {
                 return ;
             }
@@ -324,10 +328,6 @@
         
         
     }];
-    
-}
-
-- (void)refreshFolder:(NSString *)folder {
     
 }
 

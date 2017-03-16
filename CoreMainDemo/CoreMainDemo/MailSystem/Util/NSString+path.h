@@ -16,7 +16,7 @@
 
 + (NSString*)mailAccountPath;
 
-- (BOOL)CH_Email;
+- (BOOL)ch_Email;
 
 + (NSString*)cachePathForAccount:(NSString*)account folder:(NSString*)folder;
 

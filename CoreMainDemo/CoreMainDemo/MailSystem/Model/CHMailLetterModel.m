@@ -7,6 +7,7 @@
 //
 
 #import "CHMailLetterModel.h"
+#import "NSDate+toString.h"
 
 
 @implementation CHMailLetterModel
@@ -24,12 +25,16 @@
         _sendDate = header.date;
         _recievedDate = header.receivedDate;
         _replyTo = header.replyTo;
-        _body = @"";
+        _htmlBody = @"";
+        _textBody = @"";
         _file = @[];
         _inlineFile = @[];
         _folder = @"";
         
         _htmlImgToLocalFile = [[NSMutableDictionary alloc] init];
+        
+        _receivedDateDes = [_recievedDate toMailString];
+        _sendDateDes = [_recievedDate toMailString];
         
     }
     return self;
@@ -44,12 +49,15 @@
     [aCoder encodeObject:self.file forKey:@"file"];
     [aCoder encodeObject:self.inlineFile forKey:@"inlineFile"];
     [aCoder encodeObject:self.subject forKey:@"subject"];
-    [aCoder encodeObject:self.body forKey:@"body"];
+    [aCoder encodeObject:self.htmlBody forKey:@"htmlBody"];
+    [aCoder encodeObject:self.textBody forKey:@"textBody"];
     [aCoder encodeObject:self.sendDate forKey:@"sendDate"];
     [aCoder encodeObject:self.recievedDate forKey:@"reveiveDate"];
     [aCoder encodeObject:@(self.uid) forKey:@"uid"];
     [aCoder encodeObject:self.folder forKey:@"folder"];
     [aCoder encodeObject:self.htmlImgToLocalFile forKey:@"htmlImgToLocalFile"];
+    [aCoder encodeObject:self.sendDateDes forKey:@"sendDateDes"];
+    [aCoder encodeObject:self.receivedDateDes forKey:@"receivedDateDes"];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
@@ -63,14 +71,17 @@
         _file = [aDecoder decodeObjectForKey:@"file"];
         _inlineFile = [aDecoder decodeObjectForKey:@"inlineFile"];
         _subject = [aDecoder decodeObjectForKey:@"subject"];
-        _body = [aDecoder decodeObjectForKey:@"body"];
-        
+        _htmlBody = [aDecoder decodeObjectForKey:@"htmlBody"];
+        _textBody = [aDecoder decodeObjectForKey:@"textBody"];
         _sendDate = [aDecoder decodeObjectForKey:@"sendDate"];
         _recievedDate = [aDecoder decodeObjectForKey:@"reveiveDate"];
         _uid = [[aDecoder decodeObjectForKey:@"uid"] unsignedIntValue];
         _folder = [aDecoder decodeObjectForKey:@"folder"];
         
         _htmlImgToLocalFile = [aDecoder decodeObjectForKey:@"htmlImgToLocalFile"];
+        
+        _sendDateDes = [aDecoder decodeObjectForKey:@"sendDateDes"];
+        _receivedDateDes = [aDecoder decodeObjectForKey:@"receivedDateDes"];
     }
     return self;
 }
