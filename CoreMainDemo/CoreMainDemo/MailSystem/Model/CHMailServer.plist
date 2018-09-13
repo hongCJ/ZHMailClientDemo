@@ -4,24 +4,6 @@
 <array>
 	<dict>
 		<key>displayName</key>
-		<string>ChangHong</string>
-		<key>icon</key>
-		<string></string>
-		<key>smptPort</key>
-		<integer>465</integer>
-		<key>imapPort</key>
-		<integer>993</integer>
-		<key>pop3Port</key>
-		<integer>995</integer>
-		<key>smtpHost</key>
-		<string>smtp.changhong.com</string>
-		<key>imapHost</key>
-		<string>imap.changhong.com</string>
-		<key>pop3Host</key>
-		<string>pop.changhong.com</string>
-	</dict>
-	<dict>
-		<key>displayName</key>
 		<string>163</string>
 		<key>icon</key>
 		<string></string>
@@ -116,11 +98,11 @@
 		<key>icon</key>
 		<string></string>
 		<key>smptPort</key>
-		<integer>0</integer>
+		<integer>465</integer>
 		<key>imapPort</key>
-		<integer>0</integer>
+		<integer>993</integer>
 		<key>pop3Port</key>
-		<integer>0</integer>
+		<integer>995</integer>
 		<key>smtpHost</key>
 		<string></string>
 		<key>imapHost</key>

@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+#import <mailcore2-ios/MailCore/MCOAddress.h>
+#import <mailcore2-ios/MailCore/MCOMessageParser.h>
+#import <mailcore2-ios/MailCore/MCOMessageBuilder.h>
+#import <mailcore2-ios/MailCore/MCOAddress.h>
+
+
 @class CHMailFolderModel;
 @class CHMailSession;
 

@@ -9,7 +9,6 @@
 #import "CHMailSession.h"
 #import "CHMailFolderModel.h"
 #import "CHMailServerModel.h"
-
 #import "CHMailCacheManager.h"
 
 

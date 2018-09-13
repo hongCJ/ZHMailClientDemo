@@ -8,7 +8,7 @@
 
 #import "CHSendMailViewController.h"
 #import "CHMailManager.h"
-
+#import <mailcore2-ios/MailCore/MCOAddress.h>
 @interface CHSendMailViewController ()<CHMailManagerSendLetterProtocol>
 @property (strong, nonatomic) IBOutlet UITextField *toTextField;
 

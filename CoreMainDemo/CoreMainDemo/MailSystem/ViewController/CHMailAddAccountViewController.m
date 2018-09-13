@@ -16,13 +16,16 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *emailTextField;
 
+
 @end
 
 @implementation CHMailAddAccountViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    if (self.server) {
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,6 +61,10 @@
             });
         }
     }];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
 }
 
 

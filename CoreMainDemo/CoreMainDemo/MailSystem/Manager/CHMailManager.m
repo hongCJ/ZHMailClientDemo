@@ -100,6 +100,7 @@
     
     CHMailAccountModel * model =  [accountManager addNewAccount:email password:password server:server displayName:name detail:description];
     
+    
     CHMailSession * session = [[CHMailSession alloc] initWithAccount:model];
     session.sessionDelegate = self;
     [session loginAccount];

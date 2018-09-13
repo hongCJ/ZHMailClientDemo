@@ -18,6 +18,12 @@
         NSString * userName = [email substringToIndex:range.location];
         
         _server = server;
+        if (server.smtpHost == nil || server.smtpHost.length == 0) {
+            NSString *hostName = [email substringFromIndex:range.location+1];
+            _server.smtpHost = [NSString stringWithFormat:@"smtp.%@", hostName];
+            _server.pop3Host = [NSString stringWithFormat:@"pop.%@", hostName];
+            _server.imapHost = [NSString stringWithFormat:@"imap.%@", hostName];
+        }
         _userName = userName;
         _password = password;
         _email = email;
